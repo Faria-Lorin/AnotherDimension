@@ -29,20 +29,39 @@ public class ArrayOps{
       return arr;
   }
 
+  public static  int[] largestInRows(int[][] matrix){
+    int[] arr = new int[matrix.length];
+    int[] large = new int[matrix.length];
+    for (int row = 0; row < matrix.length; row++){
+    for (int col = 0; col < matrix[0].length; col++){
+      large[col] = matrix[row][col];
+
+    }
+    arr[row] = ArrayOps.largest(large);
+  }
+    return arr;
+  }
 
   public static void main(String[] args) {
   /*int [] x = {1,2,3,4,5,5};
     System.out.println(ArrayOps.sum(x));
     int [] x = {1,2,3,4,15,5};
-    System.out.println(ArrayOps.largest(x));*/
+    System.out.println(ArrayOps.largest(x));
     int[][] matrix = new int [5][2];
     for (int row = 0; row < matrix.length; row++){
     for (int col = 0; col < matrix[0].length; col++){
       matrix[row][col] = 2;
     }
   }
-    System.out.println(Arrays.toString(sumRows(matrix)));
+    System.out.println(Arrays.toString(sumRows(matrix)));*/
+    int i = 10;
+    int[][] matrix = new int [5][2];
+    for (int row = 0; row < matrix.length; row++){
+    for (int col = 0; col < matrix[0].length; col++){
+      matrix[row][col] = i;
+      i++;
+    }
   }
-
-
+    System.out.println(Arrays.toString(largestInRows(matrix)));
+  }
 }

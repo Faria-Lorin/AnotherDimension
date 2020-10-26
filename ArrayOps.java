@@ -42,6 +42,10 @@ public class ArrayOps{
     return arr;
   }
 
+  public static  int sum(int[][] arr) {
+    return ArrayOps.sum(ArrayOps.sumRows(arr));
+  }
+
   public static void main(String[] args) {
   /*int [] x = {1,2,3,4,5,5};
     System.out.println(ArrayOps.sum(x));
@@ -62,6 +66,6 @@ public class ArrayOps{
       i++;
     }
   }
-    System.out.println(Arrays.toString(largestInRows(matrix)));
+    System.out.println(ArrayOps.sum(matrix));
   }
 }

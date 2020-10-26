@@ -75,6 +75,17 @@ public class ArrayOps{
     return x;
 }
 
+public static boolean isColMagic(int[][] matrix) {
+  boolean x = true;
+  int [] arr = ArrayOps.sumCols(matrix);
+  for (int i = 0; i < arr.length -1; i++){
+    if (arr[i] != arr[i+1]){
+      x = false;
+    }
+  }
+  return x;
+}
+
   public static void main(String[] args) {
   /*int [] x = {1,2,3,4,5,5};
     System.out.println(ArrayOps.sum(x));
@@ -95,12 +106,12 @@ public class ArrayOps{
     int[][] matrix = new int [5][2];
     for (int row = 0; row < matrix.length; row++){
     for (int col = 0; col < matrix[0].length; col++){
-      matrix[row][col] = i;
-      i++;
+      matrix[row][col] = 1;
+
     }
   }
-    /*System.out.println(ArrayOps.sum(matrix));*/
-    System.out.println(Arrays.toString(ArrayOps.sumCols(matrix)));
-
+    /*System.out.println(ArrayOps.sum(matrix));
+    System.out.println(Arrays.toString(ArrayOps.sumCols(matrix)));*/
+    System.out.println(isColMagic(matrix));
   }
 }

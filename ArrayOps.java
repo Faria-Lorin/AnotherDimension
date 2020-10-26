@@ -99,7 +99,7 @@ public class ArrayOps{
   if (ArrayOps.sum(Acol) == ArrayOps.sum(Arow)){
     return true;
   }
-  else return false;
+  else return false;  
 }
 
 }

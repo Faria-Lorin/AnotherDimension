@@ -22,9 +22,9 @@ public class ArrayOps{
       for (int row = 0; row < matrix.length; row++){
       for (int col = 0; col < matrix[0].length; col++){
         sums[col] = matrix[row][col];
-        ArrayOps.sum(sums);
+
       }
-      arr[row] = sums[row];
+      arr[row] = ArrayOps.sum(sums);
     }
       return arr;
   }
@@ -36,6 +36,11 @@ public class ArrayOps{
     int [] x = {1,2,3,4,15,5};
     System.out.println(ArrayOps.largest(x));*/
     int[][] matrix = new int [5][2];
+    for (int row = 0; row < matrix.length; row++){
+    for (int col = 0; col < matrix[0].length; col++){
+      matrix[row][col] = 2;
+    }
+  }
     System.out.println(Arrays.toString(sumRows(matrix)));
   }
 

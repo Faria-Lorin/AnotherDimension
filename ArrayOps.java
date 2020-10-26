@@ -75,7 +75,7 @@ public class ArrayOps{
     return x;
 }
 
-public static boolean isColMagic(int[][] matrix) {
+  public static boolean isColMagic(int[][] matrix) {
   boolean x = true;
   int [] arr = ArrayOps.sumCols(matrix);
   for (int i = 0; i < arr.length -1; i++){
@@ -86,32 +86,20 @@ public static boolean isColMagic(int[][] matrix) {
   return x;
 }
 
-  public static void main(String[] args) {
-  /*int [] x = {1,2,3,4,5,5};
-    System.out.println(ArrayOps.sum(x));
 
-    int [] x = {1,2,3,4,15,5};
-    System.out.println(ArrayOps.largest(x));
-
-    int[][] matrix = new int [5][2];
-    for (int row = 0; row < matrix.length; row++){
-    for (int col = 0; col < matrix[0].length; col++){
-      matrix[row][col] = 2;
-    }
+  public static boolean isLocationMagic(int[][] matrix, int row, int col) {
+   int[] Arow = new int[col];
+   int[] Acol = new int[row];
+   for (int r = 0; r < matrix.length; r++){
+     Acol[r] = matrix[r][col];
+   }
+   for (int c = 0; c < matrix[0].length; c++){
+     Arow[c] = matrix[row][c];
   }
-    System.out.println(Arrays.toString(sumRows(matrix)));
-      System.out.println(isRowMagic(matrix));*/
-
-    int i = 10;
-    int[][] matrix = new int [5][2];
-    for (int row = 0; row < matrix.length; row++){
-    for (int col = 0; col < matrix[0].length; col++){
-      matrix[row][col] = 1;
-
-    }
+  if (ArrayOps.sum(Acol) == ArrayOps.sum(Arow)){
+    return true;
   }
-    /*System.out.println(ArrayOps.sum(matrix));
-    System.out.println(Arrays.toString(ArrayOps.sumCols(matrix)));*/
-    System.out.println(isColMagic(matrix));
-  }
+  else return false;
+}
+
 }

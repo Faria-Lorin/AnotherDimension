@@ -50,6 +50,20 @@ public class ArrayOps{
   }
 
 
+  public static  int[] sumCols(int[][] arr) {
+    int[] fin = new int[arr[0].length];
+    int[] sums = new int[arr.length];
+    for (int col = 0; col < arr[0].length; col++){
+    for (int row = 0; row < arr.length; row++){
+      sums[row] = arr[row][col];
+
+    }
+    fin[col] = ArrayOps.sum(sums);
+  }
+    return fin;
+  }
+
+
   public static boolean isRowMagic(int[][] matrix) {
     boolean x = true;
     int [] arr = ArrayOps.sumRows(matrix);
@@ -74,17 +88,19 @@ public class ArrayOps{
       matrix[row][col] = 2;
     }
   }
-    System.out.println(Arrays.toString(sumRows(matrix)));*/
+    System.out.println(Arrays.toString(sumRows(matrix)));
+      System.out.println(isRowMagic(matrix));*/
 
     int i = 10;
     int[][] matrix = new int [5][2];
     for (int row = 0; row < matrix.length; row++){
     for (int col = 0; col < matrix[0].length; col++){
-      matrix[row][col] = 2;
-      
+      matrix[row][col] = i;
+      i++;
     }
   }
     /*System.out.println(ArrayOps.sum(matrix));*/
-  System.out.println(isRowMagic(matrix));
+    System.out.println(Arrays.toString(ArrayOps.sumCols(matrix)));
+
   }
 }

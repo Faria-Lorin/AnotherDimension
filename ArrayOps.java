@@ -20,11 +20,10 @@ public class ArrayOps{
 
   public static int[] sumRows(int[][] matrix) {
       int[] arr = new int[matrix.length];
-      int[] sums = new int[matrix.length];
+      int[] sums = new int[matrix[0].length];
       for (int row = 0; row < matrix.length; row++){
       for (int col = 0; col < matrix[0].length; col++){
-        sums[col] = matrix[row][col];
-
+      sums[col] = matrix[row][col];
       }
       arr[row] = ArrayOps.sum(sums);
     }
@@ -34,7 +33,7 @@ public class ArrayOps{
 
   public static  int[] largestInRows(int[][] matrix){
     int[] arr = new int[matrix.length];
-    int[] large = new int[matrix.length];
+    int[] large = new int[matrix[0].length];
     for (int row = 0; row < matrix.length; row++){
     for (int col = 0; col < matrix[0].length; col++){
       large[col] = matrix[row][col];
@@ -88,8 +87,8 @@ public class ArrayOps{
 
 
   public static boolean isLocationMagic(int[][] matrix, int row, int col) {
-   int[] Arow = new int[col];
-   int[] Acol = new int[row];
+   int[] Arow = new int[matrix[0].length];
+   int[] Acol = new int[matrix.length];
    for (int r = 0; r < matrix.length; r++){
      Acol[r] = matrix[r][col];
    }
@@ -99,7 +98,7 @@ public class ArrayOps{
   if (ArrayOps.sum(Acol) == ArrayOps.sum(Arow)){
     return true;
   }
-  else return false;  
+  else return false;
 }
 
 }
